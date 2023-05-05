@@ -82,6 +82,35 @@ main {
     width: 328px;
     font-size: 16px;
     line-height: 19px;
+    padding: 16px 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-desencriptar:hover {
+    color: #fff;
+}
+
+.btn-desencriptar::after {
+    content: "";
+    background: #0A3871;
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0);
+    transition: all 0.3s ease;
+}
+
+.btn-desencriptar:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1);
 }
 
 .btn-encriptar {
@@ -93,6 +122,35 @@ main {
     height: 67px;
     width: 328px;
     font-size: 16px;
+    padding: 16px 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-encriptar:hover {
+    color: #000000;
+}
+
+.btn-encriptar::after {
+    content: "";
+    background: #D8DFE8;
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0);
+    transition: all 0.3s ease;
+}
+
+.btn-encriptar:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1);
 }
 
 
@@ -153,7 +211,7 @@ main {
 
 .hide-paragraph {
     font-size: 16px;
-    background:transparent;
+    background: transparent;
 }
 
 .div-btn-copy {
@@ -178,8 +236,39 @@ main {
     width: 60%;
     font-size: 16px;
     max-width: 300px;
+
+    padding: 16px 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
 }
 
+.btn-copy:hover {
+    color: white;
+}
+
+.btn-copy::after {
+    content: "";
+    background: #0A3871;
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0);
+    transition: all 0.3s ease;
+}
+
+.btn-copy:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1);
+}
+
+/*responsive*/
 @media screen and (max-width:768px) {
 
     .section-input {

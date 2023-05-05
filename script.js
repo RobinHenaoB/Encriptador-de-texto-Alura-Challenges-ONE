@@ -3,7 +3,9 @@ const outputText = document.querySelector(".output-padron");//textarea de ingres
 const hide = document.querySelector(".div-hide");//class div donde estan  la imagen y el texto de Ningún mensaje fue encontrado
 const visible = document.querySelector(".div-btn-copy");//class  div donde esta el botton copy
 
-//funcion para boton de encriptar
+const matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];//matriz con las claves
+
+//funcion para el boton de encriptar
 function btnEncriptar() {
     const text = encriptar(inputText.value);
     if (text.length > 0) {
@@ -16,7 +18,7 @@ function btnEncriptar() {
     }
 }
 
-//funcion para boton de desencriptar
+//funcion para el boton de desencriptar
 function btnDesencriptar() {
     const text = desencriptar(inputText.value);
     if (text.length > 0) {
@@ -31,33 +33,27 @@ function btnDesencriptar() {
 
 //funcion para el boton de copiar
 function btnCopy() {
-    outputText.select();
-    outputText.setSelectionRange(0, 99999);
-    document.execCommand('copy');
+    outputText.select();//selecciona el texto del textArea de salida
+    outputText.setSelectionRange(0, 99999);//rango de seleccion
+    document.execCommand('copy');//comando copiado al portapapeles
 }
 
 function encriptar(stringEncrip) {
-    let matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
     stringEncrip = stringEncrip.toLowerCase();
-
     for (let i = 0; i < matrizCodigo.length; i++) {
         if (stringEncrip.includes(matrizCodigo[i][0])) {
             stringEncrip = stringEncrip.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1]);
         }
-
     }
     return stringEncrip;
 }
 
 function desencriptar(stringDesencrip) {
-    let matrizCode = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
     stringDesencrip = stringDesencrip.toLowerCase();
-
-    for (let i = 0; i < matrizCode.length; i++) {
-        if (stringDesencrip.includes(matrizCode[i][1])) {
-            stringDesencrip = stringDesencrip.replaceAll(matrizCode[i][1], matrizCode[i][0]);
+    for (let i = 0; i < matrizCodigo.length; i++) {
+        if (stringDesencrip.includes(matrizCodigo[i][1])) {
+            stringDesencrip = stringDesencrip.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0]);
         }
-
     }
     return stringDesencrip;
 }

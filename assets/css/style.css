@@ -270,6 +270,11 @@ main {
 
 /*responsive*/
 @media screen and (max-width:768px) {
+    .logo {
+        padding-top: 40px;
+        margin-left: 5px;
+        width: 15%;
+    }
 
     .section-input {
         width: 85%;
